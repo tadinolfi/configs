@@ -1,0 +1,7 @@
+#!/bin/bash
+#conky -c ~/.conky/.conkyrc-panel-0 & > /dev/null
+#conky -c ~/.conky/.conkyrc-panel-1 & > /dev/null
+#conky -c ~/.conky/.conkyrc-panel-2 & > /dev/null
+conky -c ~/.conky/.conkyrc-panel-3 & > /dev/null
+conky -c ~/.conky/.conkyrc-panel-4 & > /dev/null
+

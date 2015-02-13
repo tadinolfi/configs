@@ -1,0 +1,52 @@
+own_window yes
+own_window_type override
+own_window_transparent yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+ 
+double_buffer yes                   # double buffering: reduces flicker - ymmv
+use_spacer right
+use_xft yes
+xftfont Bitstream Vera Sans Mono-12
+xftalpha 1
+
+update_interval 10
+
+minimum_size 200 200                # minimum size
+
+draw_shades no
+draw_outline no                     # outline text
+draw_borders no
+
+uppercase no
+
+stippled_borders 3
+border_margin 9
+border_width 10
+
+default_color grey                  # grey90 == #e5e5e5
+
+own_window_colour brown
+own_window_transparent yes
+#alignment top_left
+alignment top_right
+#alignment bottom_left
+#alignment bottom_left
+
+gap_x 24
+gap_y 90
+
+cpu_avg_samples 1                   # cpu samples to average (1=disable)
+text_buffer_size 1024
+ 
+# content
+TEXT
+${color #ffcb48}SENSORS$color
+${execi 60 /home/tadinolfi/bin/sensors.py}
+
+${color #ffcb48}HOSTS$color
+
+${execi 60 /home/tadinolfi/bin/site_status.py inscopetechnology.com areahookup.com}
+
+${color #F09000}CPU${color #707070}:${color white} ${cpubar}
+${color #F09000}MEM${color #707070}:${color white} ${membar}
+${color #F09000}SWP${color #707070}:${color white} ${swapbar}
